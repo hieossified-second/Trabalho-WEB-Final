@@ -1,0 +1,245 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+}
+
+body {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #64646336;
+    display: flex;
+}
+
+
+.menu {
+    background-color: #0d3b2f;
+    font-family: Georgia, serif;
+    font-size: x-small;
+    padding: 20px;
+    min-width:240px;
+    max-width: 240px;
+    min-height: 100vh;
+    color: white;
+    position: fixed;
+    z-index: 2;
+}
+
+.menu h1 {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+.menu button {
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 0px;
+    position: relative;
+    right: 25px;
+    margin: 5px;
+    width: 200px;
+    text-align: left;
+    color: white;
+}
+
+
+
+
+.menu button:hover {
+    background-color:#4b805c;
+    font-size: large;
+    padding: 10%;
+    margin: 10px;
+    transition: background-color 0.5s ease;
+}
+
+.menu button a:hover {
+    font-size: large;
+}
+
+
+
+.menu button:first-child{
+    background-color: #4b805c;
+}
+
+.menu nav {
+    position: relative;
+    padding: 10px;
+}
+
+.menu .frase{
+    font-size: 12px;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    font-family: Georgia, serif;
+    font-style: italic;
+
+}
+
+.conteudo{
+    margin-left: 240px;
+    width: 80%;
+}
+
+header{
+
+    margin: 10px;
+    margin-bottom: 50px;
+}
+
+header > h1 {
+    font-family: Georgia, serif;
+}
+
+#busca{
+    position: relative;
+    padding: 10px;
+    text-align: end;
+}
+
+#boasvindas{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    color: #0d3b2f;
+    font-family: Georgia, serif;
+    margin: 20px;
+}
+
+#busca img{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: 1px solid;
+    top: 20px;
+    left: 10px;
+}
+
+#boasvindas p{
+    position: relative;
+    bottom: 16px;
+}
+
+.banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    min-width: 60%;
+    margin-left: 100px;
+    border-radius: 15px;
+    background: linear-gradient(to bottom right, #0d352a, #4b805c); /* transita suavemente as cores em diagonal */
+}
+
+.textoBanner{
+    font-family: Georgia, serif;
+    color: white;
+}
+
+.textoBanner p{
+    font-size: x-small;
+}
+
+
+.imga{
+    display: flex;
+    gap: 10px;
+    position: relative;
+    justify-content: space-between;
+}
+
+.imga img{
+    max-width: 300px;
+    min-width: 200px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+
+.section{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    gap: 20px;
+    margin: 50px;
+    min-width: 100%;
+}
+
+.boxes{
+    width: 100%;
+    height: 100px;
+    max-height: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px solid;
+    border-color: rgb(224, 215, 215);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.589);
+    color: #2b6b53;
+}
+
+.boxes:hover{
+    font-size: large;
+    padding: 1%;
+    margin: 1%;
+}
+
+.boxes h3{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+}
+
+.boxes p{
+    color: #4b805c;
+}
+
+.section2{
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin-left: 100px;
+}
+
+#textoVendas{
+    margin: 20px;
+    margin-left: 100px;
+    color: #4b805c;
+}
+
+.tabela h4{
+    padding-bottom: 10px;
+}
+
+.section2 table{
+    padding: 10px;
+    border: 1px solid rgb(224, 215, 215);
+    background-color: rgba(255, 255, 255, 0.589);
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 100px;
+    width: 100%;
+}
+
+
+.section2 th{
+    border: 0px solid;
+    padding: 10px;
+    text-align: center;
+}
+
+.section2 td{
+    padding: 30px;
+    border: 0px;
+    text-align: center;
+    
+}
+
