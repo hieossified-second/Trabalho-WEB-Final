@@ -1,0 +1,436 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GLOBAIS E RESETS
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #F8F6F1;
+    font-family: Arial, sans-serif;
+    color: #1C2B24;
+}
+
+body {
+    display: flex; /* aside e main ficam lado a lado */
+}
+
+/* ==========================================================================
+   2. ELEMENTOS DE LAYOUT (ESTRUTURA BASE)
+   ========================================================================== */
+aside {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 240px;
+    height: 100%;
+    padding: 25px 15px;
+    background-color: #0F3B2E;
+}
+
+/* Área à direita do aside: topo, título e (tabela + detalhes) */
+.principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-width: 0;
+    padding: 25px 40px;
+    overflow-y: auto;
+}
+
+footer{
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    
+    
+}
+
+header p {
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+#PesquisaTopo {
+    width: 100%;
+    max-width: 500px;
+    padding: 11px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    outline: none;
+}
+
+#PesquisaTopo:focus,
+.item:focus {
+    border-color: #2E7D5E;
+    box-shadow: 0 0 0 3px rgba(46, 125, 94, 0.15);
+}
+
+/* Título à esquerda, botão à direita */
+.topoPagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.area {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    
+}
+
+.conteiner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 12px;
+}
+
+/* ==========================================================================
+   3. NAVEGAÇÃO E LISTAS (MENU DO ASIDE)
+   ========================================================================== */
+aside h1 {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 40px;
+    list-style: none;
+}
+
+li {
+    border-radius: 8px;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+li a {
+    display: block;
+    padding: 12px 15px;
+}
+
+li:hover {
+    background-color: #1d5444;
+}
+
+/* item da página atual */
+li.ativo {
+    background-color: #2B6A52;
+    font-weight: 600;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   4. FORMULÁRIOS, INPUTS E TABELA
+   ========================================================================== */
+form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.item {
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #6E7B74;
+    background-color: #ffffff;
+    border: 1px solid #E7E3DA;
+    border-radius: 8px;
+    outline: none;
+}
+
+#Pesquisa {
+    flex: 1;
+    min-width: 0;
+    border-radius: 10px;
+    border: solid 1px black;
+    padding: 5px;
+}
+
+form select.item {
+    width: 190px;
+    border: 1px solid  #1b1a18;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 14px 10px;
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 1px solid #E7E3DA;
+}
+
+th.linha_titulos {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6E7B74;
+}
+
+/* linha selecionada (a que aparece nos detalhes) */
+tr.selecionada {
+    background-color: #F3F7F4;
+}
+
+/* botões Editar / Excluir */
+.acao {
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #1F5C46;
+    background: transparent;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.acao:hover {
+    background-color: #E9EFEB;
+}
+
+.acao.excluir {
+    color: #D64545;
+}
+
+.acao.excluir:hover {
+    background-color: #FBE9E9;
+}
+
+/* ==========================================================================
+   5. BOTÕES
+   ========================================================================== */
+.cadastroCliente button {
+    padding: 11px 20px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    background-color: #1F5C46;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cadastroCliente button:hover,
+.EditarCadastro button:hover {
+    background-color: #17493a;
+}
+
+/* ==========================================================================
+   6. DETALHES DO CLIENTE
+   ========================================================================== */
+.detalhesCliente {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-shrink: 0;
+    width: 300px;
+    padding: 20px;
+    background-color: #EFEDE4;
+    border-radius: 12px;
+    border:1px solid #000000;
+}
+
+.detalhesCliente p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.registro {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #E7E3DA;
+    border-radius: 10px;
+}
+
+.registro h3 {
+    font-size: 15px;
+}
+
+.registro small {
+    color: #6E7B74;
+}
+
+.informacoesCliente {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #E7E3DA;
+    border-radius: 10px;
+}
+
+.informacoesCliente div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 14px;
+}
+
+.informacoesCliente dt {
+    font-size: 12px;
+    color: #6E7B74;
+}
+
+.EditarCadastro button {
+    width: 100%;
+    padding: 11px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: #1F5C46;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* ==========================================================================
+   7. TÍTULO DA PÁGINA
+   ========================================================================== */
+.titulo dt {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.titulo dd {
+    font-size: 15px;
+    color: #6E7B74;
+}
+
+/* ==========================================================================
+   8. RODAPÉ DO MENU
+   ========================================================================== */
+footer {
+    margin-top: auto;      /* empurra o rodapé para o fim do aside */
+    padding: 0 10px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.linha {
+    width: 30px;
+    height: 1px;
+    margin-bottom: 12px;
+    background-color: white;
+}
+
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+
+/* ---------- Tablet (até 1100px): detalhes vai para baixo da tabela ---------- */
+@media (max-width: 1100px) {
+    .area {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .detalhesCliente {
+        width: 100%;
+    }
+}
+
+/* ---------- Celular (até 700px): menu vira barra no topo ---------- */
+@media (max-width: 700px) {
+    body {
+        flex-direction: column;
+        height: auto;
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    li {
+        font-size: 15px;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .principal {
+        padding: 15px;
+        overflow-y: visible;
+    }
+
+    .topoPagina {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .titulo dt {
+        font-size: 28px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    form select.item {
+        width: 100%;
+    }
+
+    /* tabela rola para o lado em vez de quebrar */
+    .conteiner {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 600px;
+    }
+}
